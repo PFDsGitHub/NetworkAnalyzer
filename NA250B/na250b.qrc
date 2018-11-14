@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="new">C:/Users/Administrator/Desktop/icon/new.png</file>
+        <file alias="copy">C:/Users/Administrator/Desktop/icon/copy.png</file>
+        <file alias="cut">C:/Users/Administrator/Desktop/icon/cut.png</file>
+        <file alias="openfile">C:/Users/Administrator/Desktop/icon/open-file.png</file>
+        <file alias="printer">C:/Users/Administrator/Desktop/icon/printer-green.png</file>
+        <file alias="saveas">C:/Users/Administrator/Desktop/icon/save-as.png</file>
+        <file alias="paste">C:/Users/Administrator/Desktop/icon/zhantie.png</file>
+    </qresource>
+</RCC>

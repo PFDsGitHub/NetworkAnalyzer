@@ -14,12 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    config.cpp
+    config.cpp \
+    newdlg.cpp
 
 HEADERS  += mainwindow.h \
-    config.h
+    config.h \
+    newdlg.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    newdlg.ui
 
 RESOURCES += \
     na250b.qrc

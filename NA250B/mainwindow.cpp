@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     configobj = new Config("../NA250B/ConfigFiles/Default.ini");
     getSettingInfo(configobj);
+
+    newdialog = new Newdlg();
 }
 
 MainWindow::~MainWindow()
@@ -69,7 +71,7 @@ void MainWindow::on_actionOpen_triggered()
 //新建
 void MainWindow::on_actionNew_triggered()
 {
-
+    newdialog->exec();
 }
 //保存
 void MainWindow::on_actionSave_triggered()

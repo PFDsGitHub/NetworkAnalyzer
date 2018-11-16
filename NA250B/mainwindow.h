@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "config.h"
+#include "newdlg.h"
 #include <QFileInfo>
 
 namespace Ui {
@@ -18,6 +19,7 @@ public:
     ~MainWindow();
 
     Config* configobj;
+    Newdlg* newdialog;
 
     bool isNewfile = false;
 

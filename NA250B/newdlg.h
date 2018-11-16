@@ -15,6 +15,9 @@ public:
     explicit Newdlg(QWidget *parent = 0);
     ~Newdlg();
 
+signals:
+    void createNewFile();
+
 private slots:
     void on_btnStandard_clicked();
 

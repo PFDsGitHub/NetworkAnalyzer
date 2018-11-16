@@ -16,7 +16,8 @@ Newdlg::~Newdlg()
 
 void Newdlg::on_btnStandard_clicked()
 {
-
+    emit createNewFile();
+    this->close();
 }
 
 void Newdlg::on_btnSweep_clicked()

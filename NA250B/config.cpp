@@ -6,9 +6,10 @@ Config::Config(const QString FileName)
 {
 
     if(FileName.isEmpty()){
-        strFileName = QCoreApplication::applicationDirPath()+ "/Default.ini";
+//        strFileName = QCoreApplication::applicationDirPath() + "/Default.ini";
+        strFileName = QString("../NA250B/ConfigFiles/Default.ini");
     }else{
-        strFileName = FileName;
+        strFileName = QString("../NA250B/ConfigFiles/%1.ini").arg(FileName);
     }
 
     settingobj = new QSettings(strFileName, QSettings::IniFormat);

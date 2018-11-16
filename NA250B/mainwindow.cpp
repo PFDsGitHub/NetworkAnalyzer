@@ -16,10 +16,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(800,700);
 
-    configobj = new Config("../NA250B/ConfigFiles/Default.ini");
+    configobj = new Config("Default");
     getSettingInfo(configobj);
 
     newdialog = new Newdlg();
+
+    //信号槽
+    connect(newdialog, &Newdlg::createNewFile, this, &MainWindow::slotCreateNewFile);
 }
 
 MainWindow::~MainWindow()
@@ -30,25 +33,29 @@ MainWindow::~MainWindow()
 void MainWindow::getSettingInfo(Config* configobj)
 {
     // set init configinfo to ui
-    this->setWindowTitle(configobj->Get("file", "filename").toString());
+    if(isNewfile){
+
+    }else{
+        this->setWindowTitle(configobj->Get("file", "filename").toString());
+
+    }
     ui->lineEdit_Fr->setText(configobj->Get("part1","Reference_Fr").toString());
     ui->lineEdit_Desc->setText(configobj->Get("part1","Description").toString());
 
 }
 
-void MainWindow::setSettingInfo(Config* configobj, QString strfilename)
+void MainWindow::setSettingInfo(Config* configobj)
 {
-    QFileInfo temp = QFileInfo(strfilename);
-    configobj->Set("user","name","admin");
-    configobj->Set("user","password","123");
-    configobj->Set("file","filename",temp.fileName());
+//    QFileInfo temp = QFileInfo(strfilename);
+
+    configobj->Set("file","filename",this->windowTitle());
     configobj->Set("part1","Reference_Fr",ui->lineEdit_Fr->text());
     configobj->Set("part1","Description",ui->lineEdit_Desc->text());
-    configobj->Set("part1","Mode","Measured FL");
-    configobj->Set("part1","Reference_CL",12.000);
-    configobj->Set("part1","Power_Applied_1",1000.0);
-    configobj->Set("part1","Power_Applied_2","nW");
-    configobj->Set("part1","Power_Applied_3",36);
+//    configobj->Set("part1","Mode","Measured FL");
+//    configobj->Set("part1","Reference_CL",12.000);
+//    configobj->Set("part1","Power_Applied_1",1000.0);
+//    configobj->Set("part1","Power_Applied_2","nW");
+//    configobj->Set("part1","Power_Applied_3",36);
 
 }
 //打开
@@ -79,14 +86,30 @@ void MainWindow::on_actionSave_triggered()
     qDebug()<<"保存槽函数";
     if(isNewfile){
         QString filename = QFileDialog::getSaveFileName(this,tr("Save File"),tr("../NA250B/ConfigFiles"),tr("(*.ini)"));
-        configobj = new Config(filename);
+        QFileInfo temp = QFileInfo(filename);
+        this->setWindowTitle(temp.baseName());
+        configobj = new Config(temp.baseName());
 
     }else{
 
     }
-    setSettingInfo(configobj, configobj->strFileName);
+    setSettingInfo(configobj);
+    getSettingInfo(configobj);
+    isNewfile = false;
     QMessageBox msgBox;
     msgBox.setText("Save Successfully.");
     msgBox.exec();
 
+}
+
+void MainWindow::slotCreateNewFile()
+{
+    qDebug()<<"创建新文件";
+    this->setWindowTitle("NewFile");
+    qDebug()<<"111"<<this->windowTitle();
+
+    isNewfile = true;
+    configobj = new Config("Newfile");
+    getSettingInfo(configobj);
+//    setSettingInfo(configobj);
 }

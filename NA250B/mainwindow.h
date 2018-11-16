@@ -25,7 +25,9 @@ public:
 
     void getSettingInfo(Config*);
 
-    void setSettingInfo(Config *, QString);
+    void setSettingInfo(Config *);
+
+
 
 private slots:
     void on_actionOpen_triggered();
@@ -33,6 +35,8 @@ private slots:
     void on_actionNew_triggered();
 
     void on_actionSave_triggered();
+
+    void slotCreateNewFile();
 
 private:
     Ui::MainWindow *ui;

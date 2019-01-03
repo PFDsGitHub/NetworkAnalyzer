@@ -15,14 +15,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     config.cpp \
-    newdlg.cpp
+    newdlg.cpp \
+    testtypedialog.cpp
 
 HEADERS  += mainwindow.h \
     config.h \
-    newdlg.h
+    newdlg.h \
+    testtypedialog.h
 
 FORMS    += mainwindow.ui \
-    newdlg.ui
+    newdlg.ui \
+    testtypedialog.ui
 
 RESOURCES += \
     na250b.qrc

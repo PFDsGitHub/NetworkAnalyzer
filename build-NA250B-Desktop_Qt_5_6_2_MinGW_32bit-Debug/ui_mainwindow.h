@@ -26,6 +26,7 @@
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include <mytextedit.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -56,11 +57,11 @@ public:
     QTextEdit *textEdit_4;
     QTextEdit *textEdit_8;
     QTextEdit *textEdit_7;
-    QTextEdit *textEdit_3;
+    MyTextEdit *textEdit_3;
     QTextEdit *textEdit_5;
     QTextEdit *textEdit_6;
     QTextEdit *textEdit_9;
-    QTextEdit *textEdit;
+    MyTextEdit *textEdit;
     QGroupBox *groupBox_6;
     QGroupBox *groupBox_5;
     QLineEdit *lineEdit_Desc;
@@ -214,7 +215,7 @@ public:
         textEdit_7->setObjectName(QStringLiteral("textEdit_7"));
         textEdit_7->setGeometry(QRect(400, 40, 51, 71));
         textEdit_7->setReadOnly(true);
-        textEdit_3 = new QTextEdit(groupBox_7);
+        textEdit_3 = new MyTextEdit(groupBox_7);
         textEdit_3->setObjectName(QStringLiteral("textEdit_3"));
         textEdit_3->setGeometry(QRect(180, 40, 51, 71));
         textEdit_3->setReadOnly(true);
@@ -230,7 +231,7 @@ public:
         textEdit_9->setObjectName(QStringLiteral("textEdit_9"));
         textEdit_9->setGeometry(QRect(520, 40, 41, 71));
         textEdit_9->setReadOnly(true);
-        textEdit = new QTextEdit(groupBox_7);
+        textEdit = new MyTextEdit(groupBox_7);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(80, 40, 51, 71));
         textEdit->setReadOnly(true);

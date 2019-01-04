@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\config.o
+./release\newdlg.o
+./release\testtypedialog.o
+./release\mytextedit.o
+./release\qrc_na250b.o
+./release\moc_mainwindow.o
+./release\moc_newdlg.o
+./release\moc_testtypedialog.o
+./release\moc_mytextedit.o
+);

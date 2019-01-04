@@ -16,12 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     config.cpp \
     newdlg.cpp \
-    testtypedialog.cpp
+    testtypedialog.cpp \
+    mytextedit.cpp
 
 HEADERS  += mainwindow.h \
     config.h \
     newdlg.h \
-    testtypedialog.h
+    testtypedialog.h \
+    mytextedit.h
 
 FORMS    += mainwindow.ui \
     newdlg.ui \

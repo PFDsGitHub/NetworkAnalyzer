@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\config.o
+./debug\newdlg.o
+./debug\testtypedialog.o
+./debug\mytextedit.o
+./debug\qrc_na250b.o
+./debug\moc_mainwindow.o
+./debug\moc_newdlg.o
+./debug\moc_testtypedialog.o
+./debug\moc_mytextedit.o
+);

@@ -34,7 +34,7 @@ void MainWindow::getSettingInfo(Config* configobj)
 {
     // set init configinfo to ui
     if(isNewfile){
-
+        qDebug()<<"isNewfile = true";
     }else{
         this->setWindowTitle(configobj->Get("file", "filename").toString());
 
@@ -67,7 +67,9 @@ void MainWindow::on_actionOpen_triggered()
     if(filename == ""){
         qDebug()<<"打开失败";
     }else{
-        configobj = new Config(filename);
+        qDebug()<<filename;
+        QFileInfo temp = QFileInfo(filename);
+        configobj = new Config(temp.baseName());
         getSettingInfo(configobj);
 
     }
